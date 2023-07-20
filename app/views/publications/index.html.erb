@@ -1,0 +1,24 @@
+
+
+<h1>Publications</h1>
+
+<div class="row mt-5 d-flex justify-content-around w-100" id="publications">
+  <% @publications.each do |publication| %>
+    
+
+    <div class="card border-secondary p-0 m-1 col-md-3">
+    <% if publication.photo.present? %>
+      <%= image_tag publication.photo, class:'img-publication' %>
+    <% else %>
+      <%= image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRMT27SaebCWZfJ0oFJph0SovekJ9HUc-OZKp2XlbZ&s", class:'img-publication' %>
+    <% end %>
+      <div class="card-img-overlay d-column justify-content-around">
+        <h5 class="card-title">Description:</h5>
+        <p class="card-text"><%= publication.description %>.</p>
+        <%= link_to 'More', publication, class:'btn btn-primary' %>
+      </div>
+    </div>
+    
+  <% end %>
+</div>
+

@@ -1,0 +1,18 @@
+<div id="<%= dom_id publication %>">
+
+  <div class="card" >
+
+    <% if publication.photo.present? %>
+      <%= image_tag publication.photo, class:'img-publication' %>
+    <% else %>
+      <%= image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRMT27SaebCWZfJ0oFJph0SovekJ9HUc-OZKp2XlbZ&s", class:'img-publication' %>
+    <% end %>
+
+    <div class="card-body">
+      <h5 class="card-title">Description</h5>
+      <p class="card-text"><%= publication.description %></p>
+      <%= link_to 'More', publication_path(publication), class:'btn btn-primary' %>
+    </div>
+  </div>
+
+</div>
